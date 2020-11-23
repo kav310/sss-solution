@@ -50,7 +50,7 @@ function MyCourse(props) {
         <Grid item lg={8}>
           <Grid container>
             <Grid item lg={3}>
-              <Typography variant="h5" className={classes.subject}>
+              <Typography variant="h4" className={classes.subject}>
                 {data[0].subject}
               </Typography>
             </Grid>

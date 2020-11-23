@@ -8,7 +8,6 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
-import Typography from "@material-ui/core/Typography";
 import { blue } from "@material-ui/core/colors";
 
 const emails = ["username@gmail.com", "user02@gmail.com"];
@@ -23,8 +22,6 @@ const useStyles = makeStyles((theme) => ({
     background: "#e5e5e5",
     padding: "15px 50px",
     fontSize: "x-large",
-    margin: theme.spacing(4, 0, 0, 0),
-    marginLeft: "15%",
   },
 }));
 
@@ -97,7 +94,7 @@ export default function SimpleDialogDemo() {
   };
 
   return (
-    <div>
+    <div classes={classes.algin}>
       <br />
       <button className={classes.shape} onClick={handleClickOpen}>
         Ask a Doubt
