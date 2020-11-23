@@ -13,70 +13,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SessionsData() {
+export default function SessionsData(props) {
   const classes = useStyles();
+  const { data } = props;
   return (
     <Grid>
-      <Grid container className={classes.gridSpacing}>
-        <Grid item lg={3}>
-          Today
-          <br /> 14/10/2020
-        </Grid>
-        <Grid item lg={3}>
-          2:00 PM
-        </Grid>
-        <Grid item lg={3}>
-          to be updated
-        </Grid>
-        <Grid item lg={3} className={classes.margin}>
-          Join
-        </Grid>
-      </Grid>
-      <Grid container className={classes.gridSpacing}>
-        <Grid item lg={3}>
-          Today
-          <br /> 14/10/2020
-        </Grid>
-        <Grid item lg={3}>
-          5:00 PM
-        </Grid>
-        <Grid item lg={3}>
-          to be updated
-        </Grid>
-        <Grid item lg={3} className={classes.margin}>
-          Join
-        </Grid>
-      </Grid>
-      <Grid container className={classes.gridSpacing}>
-        <Grid item lg={3}>
-          Today
-          <br /> 14/10/2020
-        </Grid>
-        <Grid item lg={3}>
-          2:00 PM
-        </Grid>
-        <Grid item lg={3}>
-          to be updated
-        </Grid>
-        <Grid item lg={3} className={classes.margin}>
-          Join
-        </Grid>
-      </Grid>
-      <Grid container className={classes.gridSpacing}>
-        <Grid item lg={3}>
-          Today
-          <br /> 14/10/2020
-        </Grid>
-        <Grid item lg={3}>
-          2:00 PM
-        </Grid>
-        <Grid item lg={3}>
-          to be updated
-        </Grid>
-        <Grid item lg={3} className={classes.margin}>
-          Join
-        </Grid>
-      </Grid>
+      {data &&
+        data.map((item) => (
+          <>
+            <Grid container className={classes.gridSpacing}>
+              <Grid item lg={3}>
+                {item.day}
+                <br /> {item.time}
+              </Grid>
+              <Grid item lg={3}>
+                {item.date}
+              </Grid>
+              <Grid item lg={3}>
+                {item.topic}
+              </Grid>
+              <Grid item lg={3} className={classes.margin}>
+                {item.action}
+              </Grid>
+            </Grid>
+          </>
+        ))}
     </Grid>
   );
 }

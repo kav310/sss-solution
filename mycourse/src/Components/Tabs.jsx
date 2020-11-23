@@ -53,9 +53,11 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-export default function SessionTabs() {
+export default function SessionTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const { data } = props;
+  console.log(data);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -96,10 +98,10 @@ export default function SessionTabs() {
         </Grid>
       </Grid>
       <TabPanel value={value} index={0}>
-        <SessionsData />
+        <SessionsData data={data.upComing} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <SessionsData />
+        <SessionsData data={data.past} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <SessionsData />

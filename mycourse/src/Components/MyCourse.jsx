@@ -41,8 +41,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MyCourse() {
+function MyCourse(props) {
   const classes = useStyles();
+  const { data } = props;
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
@@ -50,7 +51,7 @@ function MyCourse() {
           <Grid container>
             <Grid item lg={3}>
               <Typography variant="h5" className={classes.subject}>
-                English
+                {data[0].subject}
               </Typography>
             </Grid>
             <Grid item lg={9}>
@@ -67,7 +68,7 @@ function MyCourse() {
               </Box>
             </Grid>
           </Grid>
-          <SessionTabs />
+          <SessionTabs data={data[0]} />
         </Grid>
         <Divider orientation="vertical" flexItem className={classes.vl} />
         <Grid item lg={3}>
@@ -76,9 +77,9 @@ function MyCourse() {
           </Typography>
           <div>
             <span className={classes.dot}></span>
-            <Typography variant="h6">Tutor Ghazal</Typography>
-            <Typography variant="subtitle1">HTML,Maths</Typography>
-            <Typography variant="subtitle2">India</Typography>
+            <Typography variant="h6">{data[0].Tutor}</Typography>
+            <Typography variant="subtitle1">{data[0].subjects}</Typography>
+            <Typography variant="subtitle2">{data[0].country}</Typography>
           </div>
           <div className={classes.clear}>
             <SimpleDialogDemo />

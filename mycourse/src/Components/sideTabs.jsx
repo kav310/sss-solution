@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import MyCourse from "./MyCourse";
+import { maths, english, science } from "../data";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,7 +63,6 @@ export default function VerticalTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <div className={classes.root}>
       <Tabs
@@ -75,16 +75,16 @@ export default function VerticalTabs() {
       >
         <Tab label="Maths" {...a11yProps(0)} />
         <Tab label="English" {...a11yProps(1)} />
-        <Tab label="Hindi" {...a11yProps(2)} />
+        <Tab label="Science" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0} className={classes.tabsPanel}>
-        <MyCourse />
+        <MyCourse data={maths} />
       </TabPanel>
       <TabPanel value={value} index={1} className={classes.tabsPanel}>
-        <MyCourse />
+        <MyCourse data={english} />
       </TabPanel>
       <TabPanel value={value} index={2} className={classes.tabsPanel}>
-        <MyCourse />
+        <MyCourse data={science} />
       </TabPanel>
     </div>
   );
