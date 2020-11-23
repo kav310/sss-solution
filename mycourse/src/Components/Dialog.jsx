@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#e5e5e5",
     padding: "15px 50px",
     fontSize: "x-large",
-    margin: theme.spacing(4, 0, 0, 20),
+    margin: theme.spacing(4, 0, 0, 0),
+    marginLeft: "30%",
   },
 }));
 

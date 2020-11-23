@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   tab: {
-    marginLeft: "120px",
+    marginLeft: "20%",
   },
   color: {
     fontSize: "larger",

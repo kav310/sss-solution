@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       flexGrow: 1,
-      margin: theme.spacing(3),
     },
   },
   shape: {
@@ -47,11 +46,7 @@ function MyCourse() {
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
-        <Grid item lg={2}>
-          <button className={classes.shape}>New course</button>
-        </Grid>
-        <Divider orientation="vertical" flexItem className={classes.vl} />
-        <Grid item lg={6}>
+        <Grid item lg={8}>
           <Grid container>
             <Grid item lg={3}>
               <Typography variant="h5" className={classes.subject}>

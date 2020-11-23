@@ -38,7 +38,7 @@ export default function SessionsData() {
           <br /> 14/10/2020
         </Grid>
         <Grid item lg={3}>
-          2:00 PM
+          5:00 PM
         </Grid>
         <Grid item lg={3}>
           to be updated
