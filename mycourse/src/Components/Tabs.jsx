@@ -1,15 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import {
-  Tabs,
-  Tab,
-  makeStyles,
-  Grid,
-  Typography,
-  Box,
-} from "@material-ui/core";
+import { Tabs, Tab, makeStyles, Typography, Box } from "@material-ui/core";
 import SessionsData from "./SessionsData";
+import Doubts from "./DoubtsTab";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +12,8 @@ const useStyles = makeStyles((theme) => ({
   color: {
     fontSize: "larger",
     fontWeight: "bold",
+    color: "#165C7D",
+    marginLeft: "2%",
   },
   gridSpacing: {
     marginLeft: "48px",
@@ -62,38 +58,14 @@ export default function SessionTabs(props) {
 
   return (
     <>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        className={classes.root}
-      >
-        <Tab
-          label="Upcoming sessions"
-          className={classes.color}
-          textColor="primary"
-        />
+      <Tabs value={value} onChange={handleChange} className={classes.root}>
+        <Tab label="Upcoming sessions" className={classes.color} />
         <Tab
           label="Past sessions"
           className={clsx(classes.tab, classes.color)}
         />
         <Tab label="Doubts" className={clsx(classes.tab, classes.color)} />
       </Tabs>
-      <Grid container className={classes.gridSpacing}>
-        <Grid item lg={3}>
-          <Typography variant={"h6"}>Date</Typography>
-        </Grid>
-        <Grid item lg={3}>
-          <Typography variant={"h6"}>Time</Typography>
-        </Grid>
-        <Grid item lg={3}>
-          <Typography variant={"h6"}>Topic</Typography>
-        </Grid>
-        <Grid item lg={3}>
-          <Typography variant={"h6"}>Action</Typography>
-        </Grid>
-      </Grid>
       <TabPanel value={value} index={0}>
         <SessionsData data={data.upComing} />
       </TabPanel>
@@ -101,7 +73,7 @@ export default function SessionTabs(props) {
         <SessionsData data={data.past} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <SessionsData />
+        <Doubts />
       </TabPanel>
     </>
   );

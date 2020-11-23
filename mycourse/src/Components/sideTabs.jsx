@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import MyCourse from "./MyCourse";
 import { maths, english, science } from "../data";
+import { Grid } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -65,27 +66,33 @@ export default function VerticalTabs() {
   };
   return (
     <div className={classes.root}>
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab label="Maths" {...a11yProps(0)} />
-        <Tab label="English" {...a11yProps(1)} />
-        <Tab label="Science" {...a11yProps(2)} />
-      </Tabs>
-      <TabPanel value={value} index={0} className={classes.tabsPanel}>
-        <MyCourse data={maths} />
-      </TabPanel>
-      <TabPanel value={value} index={1} className={classes.tabsPanel}>
-        <MyCourse data={english} />
-      </TabPanel>
-      <TabPanel value={value} index={2} className={classes.tabsPanel}>
-        <MyCourse data={science} />
-      </TabPanel>
+      <Grid container>
+        <Grid item lg={3}>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab label="Maths" {...a11yProps(0)} />
+            <Tab label="English" {...a11yProps(1)} />
+            <Tab label="Science" {...a11yProps(2)} />
+          </Tabs>
+        </Grid>
+        <Grid item lg={9}>
+          <TabPanel value={value} index={0} className={classes.tabsPanel}>
+            <MyCourse data={maths} />
+          </TabPanel>
+          <TabPanel value={value} index={1} className={classes.tabsPanel}>
+            <MyCourse data={english} />
+          </TabPanel>
+          <TabPanel value={value} index={2} className={classes.tabsPanel}>
+            <MyCourse data={science} />
+          </TabPanel>
+        </Grid>
+      </Grid>
     </div>
   );
 }

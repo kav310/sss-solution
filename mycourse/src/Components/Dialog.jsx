@@ -19,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
   shape: {
     border: 0,
     outline: 0,
-    background: "#e5e5e5",
-    padding: "15px 50px",
+    borderRadius: "15px",
+    background: "#FF6A2A",
+    padding: "5% 15%",
+    color: "white",
     fontSize: "x-large",
   },
 }));

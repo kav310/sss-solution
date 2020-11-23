@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   dot: {
     height: "100px",
     width: "100px",
-    backgroundColor: "#00ADDF",
+    backgroundColor: "#165C7D",
     borderRadius: "50%",
     display: "inline-block",
     margin: theme.spacing(0, 5, 0, 4),
@@ -48,38 +48,20 @@ function MyCourse(props) {
     <div className={classes.root}>
       <Grid container spacing={2}>
         <Grid item lg={8}>
-          <Grid container>
-            <Grid item lg={3}>
-              <Typography variant="h4" className={classes.subject}>
-                {data[0].subject}
-              </Typography>
-            </Grid>
-            <Grid item lg={9}>
-              <Box textAlign="right" m={1}>
-                <Typography variant="h5" className={classes.session}>
-                  Sessions Completed:14
-                </Typography>
-                <Typography variant="h5" className={classes.session}>
-                  Doubts Resolved:34
-                </Typography>
-                <Typography variant="h5" className={classes.session}>
-                  Home work Completed:12
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
+          <Typography variant="h3" className={classes.subject}>
+            {data[0].subject}
+          </Typography>
           <SessionTabs data={data[0]} />
         </Grid>
         <Divider orientation="vertical" flexItem className={classes.vl} />
         <Grid item lg={3}>
-          <Typography variant="h5" className={classes.subject}>
+          <Typography variant="h4" className={classes.subject}>
             Tutor Profile
           </Typography>
           <div>
             <span className={classes.dot}></span>
-            <Typography variant="h6">{data[0].Tutor}</Typography>
-            <Typography variant="subtitle1">{data[0].subjects}</Typography>
-            <Typography variant="subtitle2">{data[0].country}</Typography>
+            <Typography variant="h5">{data[0].Tutor}</Typography>
+            <Typography variant="h6">{data[0].subjects}</Typography>
           </div>
           <div className={classes.clear}>
             <SimpleDialogDemo />
