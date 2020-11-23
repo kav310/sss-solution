@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "15px 50px",
     fontSize: "x-large",
     margin: theme.spacing(4, 0, 0, 0),
-    marginLeft: "30%",
+    marginLeft: "15%",
   },
 }));
 
