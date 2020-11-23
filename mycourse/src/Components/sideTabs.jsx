@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
   tabsPanel: {
     width: "100%",
   },
+  color: {
+    background: "#165C7D",
+  },
 }));
 
 export default function VerticalTabs() {
@@ -67,7 +70,7 @@ export default function VerticalTabs() {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid item lg={3}>
+        <Grid item lg={3} className={classes.color}>
           <Tabs
             orientation="vertical"
             variant="scrollable"
